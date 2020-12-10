@@ -23,19 +23,22 @@ const getSeason = (lat, month) => {
 
 
 
-const  SeasonDisplay = (props) => {
+const SeasonDisplay = (props) => {
 	const season = getSeason(props.lat, new Date().getMonth());
 	const { text, icon } = seasonConfig[season];
 
 	return (
 		<div className={`season-display ${season}`}>
-			<i className= {`icon-left massive ${icon} loading icon`} />
-			<h1>{text}</h1>
-			<i className= {`icon-right massive ${icon} loading icon`} />
-			</div>
+			<i className={`icon-left massive ${icon} loading icon`} />
+			<h1 className="ui header">{text}</h1>
+			<p>This is a very simple React app that uses class-based components and lifecycle events. 
+				It uses the geolocation API to determine, based on the current month, whether it is the cold or warm season.
+			</p>
+			<i className={`icon-right massive ${icon} loading icon`} />
+		</div>
 	);
 };
 
 
- 
+
 export default SeasonDisplay;
